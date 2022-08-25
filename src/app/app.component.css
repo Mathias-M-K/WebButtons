@@ -1,0 +1,120 @@
+
+.btn_container{
+  width: 100px;
+  height: 100px;
+
+  border-radius: 100%;
+
+  border-color: grey;
+  border-style: solid;
+  border-width: 2px;
+
+  margin: 100px;
+
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+}
+.btn_container:hover .inner{
+  height: 30px;
+  width: 70px;
+
+  border-radius: 5px;
+
+  background-color: aliceblue;
+}
+
+.btn_container:hover .outer{
+  opacity: 90%;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 5;
+
+}
+
+.circle{
+  margin: 0 auto;
+
+  position: absolute;
+
+
+  border-radius: 100%;
+
+  top: 50%;
+  transform: translate(0, -50%);
+
+  transition: width 1s ease 0.5s,
+  height 1s ease 0.5s,
+  background-color 1s ease 0.5s,
+  border-radius 1s ease 0.5s;
+}
+
+.outer{
+  width: 90px;
+  height: 90px;
+
+  background-color: orange;
+
+  animation: outerAnimation 2s infinite;
+
+  transition: opacity 1s ease 0.5s;
+}
+
+.middle{
+  width: 70px;
+  height: 70px;
+
+  background-color: mediumseagreen;
+  animation: middleAnimation 0.7s infinite 0.2s;
+}
+
+.inner{
+  width: 80px;
+  height: 80px;
+
+  background-color: darkorange;
+
+}
+
+.text_center{
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  top:50%;
+
+  line-height: 100%;
+  position: absolute;
+}
+
+@keyframes outerAnimation {
+  0%, 100%{
+    height: 100px;
+    width: 100px;
+  }
+  50%{
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@keyframes middleAnimation {
+  0%, 100%{
+    height: 75px;
+    width: 75px;
+  }
+  50%{
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@keyframes innerAnimation {
+  0%, 100%{
+    height: 50px;
+    width: 50px;
+  }
+  50%{
+    height: 40px;
+    width: 40px;
+  }
+}
