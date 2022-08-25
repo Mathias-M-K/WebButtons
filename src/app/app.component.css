@@ -1,7 +1,7 @@
 
 .btn_container{
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
 
   border-radius: 100%;
 
@@ -16,21 +16,19 @@
 
   position: relative;
 }
-.btn_container:hover .inner{
-  height: 30px;
-  width: 70px;
-
-  border-radius: 5px;
-
-  background-color: aliceblue;
+.btn_container:hover .button{
+  width: 30px;
 }
 
-.btn_container:hover .outer{
-  opacity: 90%;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 5;
-
+.btn_container:hover .loading_dot{
+  animation: loadingDotAnimation 1s infinite 0.2s;
 }
+
+.btn_container:hover .text_center{
+  opacity: 0;
+}
+
+
 
 .circle{
   margin: 0 auto;
@@ -43,37 +41,30 @@
   top: 50%;
   transform: translate(0, -50%);
 
-  transition: width 1s ease 0.5s,
-  height 1s ease 0.5s,
-  background-color 1s ease 0.5s,
-  border-radius 1s ease 0.5s;
+  transition: width 0.5s ease,
+  height 0.5s ease,
+  background-color 0.5s ease,
+  border-radius 0.5s ease;
 }
 
-.outer{
-  width: 90px;
-  height: 90px;
+.loading_dot{
+  width: 0;
+  height: 0;
 
-  background-color: orange;
+  background-color: white;
 
-  animation: outerAnimation 2s infinite;
 
-  transition: opacity 1s ease 0.5s;
 }
 
-.middle{
-  width: 70px;
-  height: 70px;
 
-  background-color: mediumseagreen;
-  animation: middleAnimation 0.7s infinite 0.2s;
-}
 
-.inner{
-  width: 80px;
-  height: 80px;
+.button{
+  width: 130px;
+  height: 30px;
 
-  background-color: darkorange;
+  border-radius: 15px;
 
+  background-color: cornflowerblue;
 }
 
 .text_center{
@@ -84,37 +75,31 @@
 
   line-height: 100%;
   position: absolute;
+
+  color: white;
+  font-family: Arial, serif;
+
+  transition: opacity 0.5s ease;
 }
 
-@keyframes outerAnimation {
-  0%, 100%{
-    height: 100px;
-    width: 100px;
+@keyframes loadingDotAnimation {
+  0%{
+    height: 0;
+    width: 0;
+
+    opacity: 100%;
   }
-  50%{
-    height: 80px;
-    width: 80px;
+  99%{
+    height: 25px;
+    width: 25px;
+
+    opacity: 0;
+  }
+  100%{
+    height: 0;
+    width: 0;
+
+    opacity: 0;
   }
 }
 
-@keyframes middleAnimation {
-  0%, 100%{
-    height: 75px;
-    width: 75px;
-  }
-  50%{
-    height: 60px;
-    width: 60px;
-  }
-}
-
-@keyframes innerAnimation {
-  0%, 100%{
-    height: 50px;
-    width: 50px;
-  }
-  50%{
-    height: 40px;
-    width: 40px;
-  }
-}
